@@ -14,9 +14,15 @@
  * limitations under the License.
  */
 
-package com.webauthn4j.metadata.data;
+package com.webauthn4j.metadata;
 
-public interface MetadataBLOBProvider {
+import com.webauthn4j.data.attestation.authenticator.AAGUID;
+import com.webauthn4j.metadata.data.statement.MetadataStatement;
 
-    MetadataBLOB provide();
+import java.util.Map;
+import java.util.Set;
+
+public interface MetadataStatementsProvider {
+
+    Map<AAGUID, Set<MetadataStatement>> provide();
 }

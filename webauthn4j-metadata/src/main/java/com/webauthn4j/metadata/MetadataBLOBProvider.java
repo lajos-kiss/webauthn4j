@@ -14,21 +14,11 @@
  * limitations under the License.
  */
 
-package com.webauthn4j.metadata.data;
+package com.webauthn4j.metadata;
 
-import com.webauthn4j.converter.util.ObjectConverter;
-import com.webauthn4j.metadata.FidoMDS3MetadataBLOBProvider;
-import org.junit.jupiter.api.Test;
+import com.webauthn4j.metadata.data.MetadataBLOB;
 
-import static org.assertj.core.api.Assertions.assertThat;
+public interface MetadataBLOBProvider {
 
-class FidoMDS3MetadataBLOBProviderTest {
-
-    @Test
-    void test(){
-        FidoMDS3MetadataBLOBProvider target = new FidoMDS3MetadataBLOBProvider(new ObjectConverter());
-        MetadataBLOB metadataBLOB = target.provide();
-        assertThat(metadataBLOB).isNotNull();
-    }
-
+    MetadataBLOB provide();
 }
